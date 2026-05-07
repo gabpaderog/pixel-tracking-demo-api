@@ -972,6 +972,7 @@ export type EmailOpenCreateManyArgs<ExtArgs extends runtime.Types.Extensions.Int
    * The data used to create many EmailOpens.
    */
   data: Prisma.EmailOpenCreateManyInput | Prisma.EmailOpenCreateManyInput[]
+  skipDuplicates?: boolean
 }
 
 /**
@@ -990,6 +991,7 @@ export type EmailOpenCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Exten
    * The data used to create many EmailOpens.
    */
   data: Prisma.EmailOpenCreateManyInput | Prisma.EmailOpenCreateManyInput[]
+  skipDuplicates?: boolean
 }
 
 /**
