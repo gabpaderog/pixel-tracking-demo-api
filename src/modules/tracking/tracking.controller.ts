@@ -19,12 +19,14 @@ class TrackingController {
   }
   async open(req: Request, res: Response) {
     try {
-      const ipAddress = req.ip;
-      console.log(req.headers["user-agent"]);
+      const ipAddress = 
+        req.headers['cf-connecting-ip'] ||
+        req.headers['x-real-ip'] ||
+        req.headers['x-forwarded-for'] ||
+        req.socket.remoteAddress ||
+        '';
 
-      await trackingService.track({
-        ipAddress,
-      });
+      console.log(ipAddress)
 
       res.setHeader("Content-Type", "image/png");
 

@@ -1,8 +1,8 @@
 import express from "express";
 import router from "./modules/tracking/tracking.route.js";
+import requestIp from "request-ip";
 
 const app = express();
-app.set("trust proxy", true);
 const port = "3000";
 
 app.get("/", (req, res) => {
@@ -10,6 +10,11 @@ app.get("/", (req, res) => {
   console.log("Response sent");
 });
 
+app.use(requestIp.mw());
+app.use("/ip", (req, res) => {
+  const ip = req.clientIp;
+  res.json({ ip });
+});
 app.use("/tracking", router);
 
 app.listen(port, () => {
