@@ -1,7 +1,7 @@
 import type { Request, Response } from "express";
 
-import trackingService from "@/modules/tracking/tracking.service.js";
-import { transparentPixel } from "@/utils/pixel.util.js";
+import trackingService from "./tracking.service.js";
+import { transparentPixel } from "../../utils/pixel.util.js";
 
 class TrackingController {
   async logs(req: Request, res: Response) {
@@ -19,9 +19,8 @@ class TrackingController {
   }
   async open(req: Request, res: Response) {
     try {
-
       const ipAddress = req.ip;
-      console.log(req.headers["user-agent"])
+      console.log(req.headers["user-agent"]);
 
       await trackingService.track({
         ipAddress,

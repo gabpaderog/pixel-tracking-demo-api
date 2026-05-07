@@ -1,5 +1,4 @@
-import prisma from "@/config/prisma.js";
-
+import prisma from "../../config/prisma.js";
 import { CreateTrackingPayload } from "./tracking.type.js";
 
 class TrackingRepository {
@@ -11,9 +10,9 @@ class TrackingRepository {
 
   async findAll() {
     return prisma.emailOpen.findMany({
-        orderBy: {
-            openedAt: "desc",
-        }
+      orderBy: {
+        openedAt: "desc",
+      },
     });
   }
 }

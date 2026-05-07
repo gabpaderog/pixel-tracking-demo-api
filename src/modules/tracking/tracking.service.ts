@@ -1,4 +1,4 @@
-import { mailTransporter } from "@/config/nodemailer.js";
+import { mailTransporter } from "../../config/nodemailer.js";
 import trackingRepository from "./tracking.repository.js";
 import { CreateTrackingPayload } from "./tracking.type.js";
 
