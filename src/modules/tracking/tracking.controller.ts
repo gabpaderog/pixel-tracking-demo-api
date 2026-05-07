@@ -21,15 +21,17 @@ class TrackingController {
     try {
       const ipAddress = req.clientIp;
 
-      await trackingService.track({
-        ipAddress,
-      });
+      //   await trackingService.track({
+      //     ipAddress,
+      //   });
 
-      res.setHeader("Content-Type", "image/png");
+      //   res.setHeader("Content-Type", "image/png");
 
-      res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
+      //   res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
 
-      return res.send(transparentPng);
+      //   return res.send(transparentPng);
+
+      res.json({ message: "Tracking pixel endpoint hit", ipAddress });
     } catch (error) {
       console.error(error);
 
