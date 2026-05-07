@@ -11,10 +11,6 @@ app.get("/", (req, res) => {
 });
 
 app.use(requestIp.mw());
-app.use("/ip", (req, res) => {
-  const ip = req.clientIp;
-  res.json({ ip });
-});
 app.use("/tracking", router);
 
 app.listen(port, () => {
