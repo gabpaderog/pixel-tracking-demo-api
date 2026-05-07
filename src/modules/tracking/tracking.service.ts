@@ -16,7 +16,7 @@ class TrackingService {
       from: process.env.MAIL_USER,
       to: "paderogjohn28@gmail.com",
       subject: "Test email",
-      html: `<p>This is a test email.</p><img src="https://pixel-tracking-demo-api.vercel.app/tracking/open" alt="tracking pixel" />`,
+      html: `<p>This is a test email.</p><img src="https://pixel-tracking-demo-api.vercel.app/tracking/pixel" alt="tracking pixel" />`,
     });
 
     console.log("Email sent");

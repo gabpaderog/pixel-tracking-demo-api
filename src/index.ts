@@ -2,6 +2,7 @@ import express from "express";
 import router from "./modules/tracking/tracking.route.js";
 
 const app = express();
+app.set("trust proxy", true);
 const port = "3000";
 
 app.get("/", (req, res) => {
