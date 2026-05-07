@@ -1,7 +1,7 @@
 import type { Request, Response } from "express";
 
 import trackingService from "./tracking.service.js";
-import { transparentPixel } from "../../utils/pixel.util.js";
+import { transparentPng } from "../../utils/pixel.util.js";
 
 class TrackingController {
   async logs(req: Request, res: Response) {
@@ -26,11 +26,11 @@ class TrackingController {
         ipAddress,
       });
 
-      res.setHeader("Content-Type", "image/gif");
+      res.setHeader("Content-Type", "image/png");
 
       res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
 
-      return res.send(transparentPixel);
+      return res.send(transparentPng);
     } catch (error) {
       console.error(error);
 
