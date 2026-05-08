@@ -84,8 +84,7 @@ class TrackingController {
   async open(req: Request, res: Response) {
     try {
       const { tid } = req.query;
-
-      return res.status(200).json({ message: "Tracking pixel received", trackingId: tid, clientIp: req.clientIp, publicIp: (req.headers["x-forwarded-for"] as string).split(",")[0]?.trim() || req.socket.remoteAddress });
+      
 
       if (tid) {
         await trackingService.trackOpen(tid as string, {
