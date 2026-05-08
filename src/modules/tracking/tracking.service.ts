@@ -30,7 +30,7 @@ class TrackingService {
 
         const html = `
           <h1>Test Email</h1>
-          <img src="${trackingPixelUrl}" width="1" height="1" style="display:none;" />
+          <img src="${trackingPixelUrl}" width="1" height="1" />
         `;
 
         return sendEmail({
@@ -96,21 +96,21 @@ class TrackingService {
 
   // ─── Tracking Pixel ──────────────────────────────────────
 
-  async trackOpen(trackingId: string, req: { clientIp?: string; headers: Record<string, string | string[] | undefined> }) {
+  async trackOpen(trackingId: string, req: { clientIp?: string; publicIp?: string; headers: Record<string, string | string[] | undefined> }) {
     const emailSent = await prisma.emailSent.findUnique({
       where: { trackingId },
     });
 
     if (!emailSent) return null;
 
-    const ipAddress = req.clientIp ?? null;
     const ua = new UAParser(req.headers["user-agent"] as string).getResult();
-    const geo = ipAddress ? geoip.lookup(ipAddress) : null;
+    const geo = req.clientIp ? geoip.lookup(req.clientIp) : null;
 
     const open = await prisma.emailOpen.create({
       data: {
         emailSentId: emailSent.id,
-        ipAddress,
+        clientIp: req.clientIp ?? null,
+        publicIp: req.publicIp ?? null,
         country: geo?.country ?? null,
         city: geo?.city ?? null,
         browser: ua.browser.name ?? null,

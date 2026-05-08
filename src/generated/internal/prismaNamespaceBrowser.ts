@@ -96,7 +96,8 @@ export type EmailSentScalarFieldEnum = (typeof EmailSentScalarFieldEnum)[keyof t
 export const EmailOpenScalarFieldEnum = {
   id: 'id',
   emailSentId: 'emailSentId',
-  ipAddress: 'ipAddress',
+  clientIp: 'clientIp',
+  publicIp: 'publicIp',
   country: 'country',
   city: 'city',
   browser: 'browser',

@@ -8,9 +8,13 @@ class TrackingController {
   async createBatch(req: Request, res: Response) {
     try {
       console.log(req.body);
-      const { name, subject, recipients } = req.body;
+      const { name, subject, recipients } = req.body as {
+        name?: string;
+        subject: string;
+        recipients: string[];
+      };
 
-      if (!subject || !recipients?.length) {
+      if (!subject || !recipients.length) {
         return res.status(400).json({ message: "subject and recipients are required" });
       }
 
@@ -84,7 +88,8 @@ class TrackingController {
       if (tid) {
         await trackingService.trackOpen(tid as string, {
           clientIp: req.clientIp,
-          headers: req.headers as Record<string, string | string[] | undefined>,
+          publicIp: (req.headers["x-forwarded-for"] as string).split(",")[0]?.trim() || req.socket.remoteAddress,
+          headers: req.headers,
         });
       }
 

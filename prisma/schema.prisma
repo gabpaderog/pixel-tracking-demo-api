@@ -37,7 +37,8 @@ model EmailOpen {
   id             String     @id @default(cuid())
   emailSentId    String
   emailSent      EmailSent  @relation(fields: [emailSentId], references: [id])
-  ipAddress      String?
+  clientIp       String?
+  publicIp       String?
   country        String?
   city           String?
   browser        String?
