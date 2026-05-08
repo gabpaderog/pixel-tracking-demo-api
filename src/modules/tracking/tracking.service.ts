@@ -110,7 +110,6 @@ class TrackingService {
       data: {
         emailSentId: emailSent.id,
         clientIp: req.clientIp ?? null,
-        publicIp: req.publicIp ?? null,
         country: geo?.country ?? null,
         city: geo?.city ?? null,
         browser: ua.browser.name ?? null,

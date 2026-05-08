@@ -38,7 +38,6 @@ model EmailOpen {
   emailSentId    String
   emailSent      EmailSent  @relation(fields: [emailSentId], references: [id])
   clientIp       String?
-  publicIp       String?
   country        String?
   city           String?
   browser        String?

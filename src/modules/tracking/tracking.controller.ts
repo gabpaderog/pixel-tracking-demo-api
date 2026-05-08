@@ -1,8 +1,6 @@
 import { Request, Response } from "express";
 import { trackingService } from "./tracking.service.js";
-
-// 1x1 transparent PNG
-const transparentPng = Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==", "base64");
+import { transparentPng } from "../../utils/pixel.util.js";
 
 class TrackingController {
   async createBatch(req: Request, res: Response) {
@@ -27,7 +25,6 @@ class TrackingController {
     }
   }
 
-  // GET /email-tracking/batch
   async getBatches(req: Request, res: Response) {
     try {
       const batches = await trackingService.getBatches();
@@ -38,7 +35,6 @@ class TrackingController {
     }
   }
 
-  // GET /email-tracking/batch/:id
   async getBatchById(req: Request, res: Response) {
     try {
       const batch = await trackingService.getBatchById(req.params.id as string);
@@ -52,7 +48,6 @@ class TrackingController {
     }
   }
 
-  // GET /email-tracking/batch/:id/stats
   async getBatchStats(req: Request, res: Response) {
     try {
       const stats = await trackingService.getBatchStats(req.params.id as string);
@@ -66,7 +61,6 @@ class TrackingController {
     }
   }
 
-  // GET /email-tracking/sent/:id
   async getEmailSentById(req: Request, res: Response) {
     try {
       const email = await trackingService.getEmailSentById(req.params.id as string);
@@ -80,22 +74,24 @@ class TrackingController {
     }
   }
 
-  // GET /email-tracking/open?tid=<trackingId>
   async open(req: Request, res: Response) {
     try {
       const { tid } = req.query;
-      
 
       if (tid) {
         await trackingService.trackOpen(tid as string, {
           clientIp: req.clientIp,
-          publicIp: (req.headers["x-forwarded-for"] as string).split(",")[0]?.trim() || req.socket.remoteAddress,
           headers: req.headers,
         });
       }
 
       res.setHeader("Content-Type", "image/png");
       res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
+      res.setHeader("Pragma", "no-cache");
+      res.setHeader("Expires", "0");
+      res.setHeader("Surrogate-Control", "no-store");
+      res.setHeader("Vary", "*");
+
       return res.send(transparentPng);
     } catch (error) {
       console.error(error);

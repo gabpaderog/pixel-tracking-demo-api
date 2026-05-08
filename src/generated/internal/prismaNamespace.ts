@@ -692,7 +692,6 @@ export const EmailOpenScalarFieldEnum = {
   id: 'id',
   emailSentId: 'emailSentId',
   clientIp: 'clientIp',
-  publicIp: 'publicIp',
   country: 'country',
   city: 'city',
   browser: 'browser',

@@ -28,7 +28,6 @@ export type EmailOpenMinAggregateOutputType = {
   id: string | null
   emailSentId: string | null
   clientIp: string | null
-  publicIp: string | null
   country: string | null
   city: string | null
   browser: string | null
@@ -44,7 +43,6 @@ export type EmailOpenMaxAggregateOutputType = {
   id: string | null
   emailSentId: string | null
   clientIp: string | null
-  publicIp: string | null
   country: string | null
   city: string | null
   browser: string | null
@@ -60,7 +58,6 @@ export type EmailOpenCountAggregateOutputType = {
   id: number
   emailSentId: number
   clientIp: number
-  publicIp: number
   country: number
   city: number
   browser: number
@@ -78,7 +75,6 @@ export type EmailOpenMinAggregateInputType = {
   id?: true
   emailSentId?: true
   clientIp?: true
-  publicIp?: true
   country?: true
   city?: true
   browser?: true
@@ -94,7 +90,6 @@ export type EmailOpenMaxAggregateInputType = {
   id?: true
   emailSentId?: true
   clientIp?: true
-  publicIp?: true
   country?: true
   city?: true
   browser?: true
@@ -110,7 +105,6 @@ export type EmailOpenCountAggregateInputType = {
   id?: true
   emailSentId?: true
   clientIp?: true
-  publicIp?: true
   country?: true
   city?: true
   browser?: true
@@ -199,7 +193,6 @@ export type EmailOpenGroupByOutputType = {
   id: string
   emailSentId: string
   clientIp: string | null
-  publicIp: string | null
   country: string | null
   city: string | null
   browser: string | null
@@ -236,7 +229,6 @@ export type EmailOpenWhereInput = {
   id?: Prisma.StringFilter<"EmailOpen"> | string
   emailSentId?: Prisma.StringFilter<"EmailOpen"> | string
   clientIp?: Prisma.StringNullableFilter<"EmailOpen"> | string | null
-  publicIp?: Prisma.StringNullableFilter<"EmailOpen"> | string | null
   country?: Prisma.StringNullableFilter<"EmailOpen"> | string | null
   city?: Prisma.StringNullableFilter<"EmailOpen"> | string | null
   browser?: Prisma.StringNullableFilter<"EmailOpen"> | string | null
@@ -253,7 +245,6 @@ export type EmailOpenOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   emailSentId?: Prisma.SortOrder
   clientIp?: Prisma.SortOrderInput | Prisma.SortOrder
-  publicIp?: Prisma.SortOrderInput | Prisma.SortOrder
   country?: Prisma.SortOrderInput | Prisma.SortOrder
   city?: Prisma.SortOrderInput | Prisma.SortOrder
   browser?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -273,7 +264,6 @@ export type EmailOpenWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.EmailOpenWhereInput | Prisma.EmailOpenWhereInput[]
   emailSentId?: Prisma.StringFilter<"EmailOpen"> | string
   clientIp?: Prisma.StringNullableFilter<"EmailOpen"> | string | null
-  publicIp?: Prisma.StringNullableFilter<"EmailOpen"> | string | null
   country?: Prisma.StringNullableFilter<"EmailOpen"> | string | null
   city?: Prisma.StringNullableFilter<"EmailOpen"> | string | null
   browser?: Prisma.StringNullableFilter<"EmailOpen"> | string | null
@@ -290,7 +280,6 @@ export type EmailOpenOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   emailSentId?: Prisma.SortOrder
   clientIp?: Prisma.SortOrderInput | Prisma.SortOrder
-  publicIp?: Prisma.SortOrderInput | Prisma.SortOrder
   country?: Prisma.SortOrderInput | Prisma.SortOrder
   city?: Prisma.SortOrderInput | Prisma.SortOrder
   browser?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -312,7 +301,6 @@ export type EmailOpenScalarWhereWithAggregatesInput = {
   id?: Prisma.StringWithAggregatesFilter<"EmailOpen"> | string
   emailSentId?: Prisma.StringWithAggregatesFilter<"EmailOpen"> | string
   clientIp?: Prisma.StringNullableWithAggregatesFilter<"EmailOpen"> | string | null
-  publicIp?: Prisma.StringNullableWithAggregatesFilter<"EmailOpen"> | string | null
   country?: Prisma.StringNullableWithAggregatesFilter<"EmailOpen"> | string | null
   city?: Prisma.StringNullableWithAggregatesFilter<"EmailOpen"> | string | null
   browser?: Prisma.StringNullableWithAggregatesFilter<"EmailOpen"> | string | null
@@ -327,7 +315,6 @@ export type EmailOpenScalarWhereWithAggregatesInput = {
 export type EmailOpenCreateInput = {
   id?: string
   clientIp?: string | null
-  publicIp?: string | null
   country?: string | null
   city?: string | null
   browser?: string | null
@@ -344,7 +331,6 @@ export type EmailOpenUncheckedCreateInput = {
   id?: string
   emailSentId: string
   clientIp?: string | null
-  publicIp?: string | null
   country?: string | null
   city?: string | null
   browser?: string | null
@@ -359,7 +345,6 @@ export type EmailOpenUncheckedCreateInput = {
 export type EmailOpenUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   clientIp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  publicIp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   browser?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -376,7 +361,6 @@ export type EmailOpenUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   emailSentId?: Prisma.StringFieldUpdateOperationsInput | string
   clientIp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  publicIp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   browser?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -392,7 +376,6 @@ export type EmailOpenCreateManyInput = {
   id?: string
   emailSentId: string
   clientIp?: string | null
-  publicIp?: string | null
   country?: string | null
   city?: string | null
   browser?: string | null
@@ -407,7 +390,6 @@ export type EmailOpenCreateManyInput = {
 export type EmailOpenUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   clientIp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  publicIp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   browser?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -423,7 +405,6 @@ export type EmailOpenUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   emailSentId?: Prisma.StringFieldUpdateOperationsInput | string
   clientIp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  publicIp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   browser?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -449,7 +430,6 @@ export type EmailOpenCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   emailSentId?: Prisma.SortOrder
   clientIp?: Prisma.SortOrder
-  publicIp?: Prisma.SortOrder
   country?: Prisma.SortOrder
   city?: Prisma.SortOrder
   browser?: Prisma.SortOrder
@@ -465,7 +445,6 @@ export type EmailOpenMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   emailSentId?: Prisma.SortOrder
   clientIp?: Prisma.SortOrder
-  publicIp?: Prisma.SortOrder
   country?: Prisma.SortOrder
   city?: Prisma.SortOrder
   browser?: Prisma.SortOrder
@@ -481,7 +460,6 @@ export type EmailOpenMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   emailSentId?: Prisma.SortOrder
   clientIp?: Prisma.SortOrder
-  publicIp?: Prisma.SortOrder
   country?: Prisma.SortOrder
   city?: Prisma.SortOrder
   browser?: Prisma.SortOrder
@@ -538,7 +516,6 @@ export type EmailOpenUncheckedUpdateManyWithoutEmailSentNestedInput = {
 export type EmailOpenCreateWithoutEmailSentInput = {
   id?: string
   clientIp?: string | null
-  publicIp?: string | null
   country?: string | null
   city?: string | null
   browser?: string | null
@@ -553,7 +530,6 @@ export type EmailOpenCreateWithoutEmailSentInput = {
 export type EmailOpenUncheckedCreateWithoutEmailSentInput = {
   id?: string
   clientIp?: string | null
-  publicIp?: string | null
   country?: string | null
   city?: string | null
   browser?: string | null
@@ -598,7 +574,6 @@ export type EmailOpenScalarWhereInput = {
   id?: Prisma.StringFilter<"EmailOpen"> | string
   emailSentId?: Prisma.StringFilter<"EmailOpen"> | string
   clientIp?: Prisma.StringNullableFilter<"EmailOpen"> | string | null
-  publicIp?: Prisma.StringNullableFilter<"EmailOpen"> | string | null
   country?: Prisma.StringNullableFilter<"EmailOpen"> | string | null
   city?: Prisma.StringNullableFilter<"EmailOpen"> | string | null
   browser?: Prisma.StringNullableFilter<"EmailOpen"> | string | null
@@ -613,7 +588,6 @@ export type EmailOpenScalarWhereInput = {
 export type EmailOpenCreateManyEmailSentInput = {
   id?: string
   clientIp?: string | null
-  publicIp?: string | null
   country?: string | null
   city?: string | null
   browser?: string | null
@@ -628,7 +602,6 @@ export type EmailOpenCreateManyEmailSentInput = {
 export type EmailOpenUpdateWithoutEmailSentInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   clientIp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  publicIp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   browser?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -643,7 +616,6 @@ export type EmailOpenUpdateWithoutEmailSentInput = {
 export type EmailOpenUncheckedUpdateWithoutEmailSentInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   clientIp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  publicIp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   browser?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -658,7 +630,6 @@ export type EmailOpenUncheckedUpdateWithoutEmailSentInput = {
 export type EmailOpenUncheckedUpdateManyWithoutEmailSentInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   clientIp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  publicIp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   browser?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -676,7 +647,6 @@ export type EmailOpenSelect<ExtArgs extends runtime.Types.Extensions.InternalArg
   id?: boolean
   emailSentId?: boolean
   clientIp?: boolean
-  publicIp?: boolean
   country?: boolean
   city?: boolean
   browser?: boolean
@@ -693,7 +663,6 @@ export type EmailOpenSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ext
   id?: boolean
   emailSentId?: boolean
   clientIp?: boolean
-  publicIp?: boolean
   country?: boolean
   city?: boolean
   browser?: boolean
@@ -710,7 +679,6 @@ export type EmailOpenSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
   id?: boolean
   emailSentId?: boolean
   clientIp?: boolean
-  publicIp?: boolean
   country?: boolean
   city?: boolean
   browser?: boolean
@@ -727,7 +695,6 @@ export type EmailOpenSelectScalar = {
   id?: boolean
   emailSentId?: boolean
   clientIp?: boolean
-  publicIp?: boolean
   country?: boolean
   city?: boolean
   browser?: boolean
@@ -739,7 +706,7 @@ export type EmailOpenSelectScalar = {
   openedAt?: boolean
 }
 
-export type EmailOpenOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "emailSentId" | "clientIp" | "publicIp" | "country" | "city" | "browser" | "browserVersion" | "os" | "osVersion" | "device" | "userAgent" | "openedAt", ExtArgs["result"]["emailOpen"]>
+export type EmailOpenOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "emailSentId" | "clientIp" | "country" | "city" | "browser" | "browserVersion" | "os" | "osVersion" | "device" | "userAgent" | "openedAt", ExtArgs["result"]["emailOpen"]>
 export type EmailOpenInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   emailSent?: boolean | Prisma.EmailSentDefaultArgs<ExtArgs>
 }
@@ -759,7 +726,6 @@ export type $EmailOpenPayload<ExtArgs extends runtime.Types.Extensions.InternalA
     id: string
     emailSentId: string
     clientIp: string | null
-    publicIp: string | null
     country: string | null
     city: string | null
     browser: string | null
@@ -1196,7 +1162,6 @@ export interface EmailOpenFieldRefs {
   readonly id: Prisma.FieldRef<"EmailOpen", 'String'>
   readonly emailSentId: Prisma.FieldRef<"EmailOpen", 'String'>
   readonly clientIp: Prisma.FieldRef<"EmailOpen", 'String'>
-  readonly publicIp: Prisma.FieldRef<"EmailOpen", 'String'>
   readonly country: Prisma.FieldRef<"EmailOpen", 'String'>
   readonly city: Prisma.FieldRef<"EmailOpen", 'String'>
   readonly browser: Prisma.FieldRef<"EmailOpen", 'String'>
