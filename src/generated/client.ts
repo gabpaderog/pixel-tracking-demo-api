@@ -31,8 +31,8 @@ export * from "./enums.js"
  * const prisma = new PrismaClient({
  *   adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL })
  * })
- * // Fetch zero or more EmailOpens
- * const emailOpens = await prisma.emailOpen.findMany()
+ * // Fetch zero or more EmailBatches
+ * const emailBatches = await prisma.emailBatch.findMany()
  * ```
  * 
  * Read more in our [docs](https://pris.ly/d/client).
@@ -41,6 +41,16 @@ export const PrismaClient = $Class.getPrismaClientClass()
 export type PrismaClient<LogOpts extends Prisma.LogLevel = never, OmitOpts extends Prisma.PrismaClientOptions["omit"] = Prisma.PrismaClientOptions["omit"], ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = $Class.PrismaClient<LogOpts, OmitOpts, ExtArgs>
 export { Prisma }
 
+/**
+ * Model EmailBatch
+ * 
+ */
+export type EmailBatch = Prisma.EmailBatchModel
+/**
+ * Model EmailSent
+ * 
+ */
+export type EmailSent = Prisma.EmailSentModel
 /**
  * Model EmailOpen
  * 

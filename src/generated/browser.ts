@@ -18,6 +18,16 @@ export { Prisma }
 export * as $Enums from './enums.js'
 export * from './enums.js';
 /**
+ * Model EmailBatch
+ * 
+ */
+export type EmailBatch = Prisma.EmailBatchModel
+/**
+ * Model EmailSent
+ * 
+ */
+export type EmailSent = Prisma.EmailSentModel
+/**
  * Model EmailOpen
  * 
  */

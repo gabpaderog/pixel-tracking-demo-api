@@ -51,6 +51,8 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
+  EmailBatch: 'EmailBatch',
+  EmailSent: 'EmailSent',
   EmailOpen: 'EmailOpen'
 } as const
 
@@ -70,11 +72,40 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
+export const EmailBatchScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  createdAt: 'createdAt'
+} as const
+
+export type EmailBatchScalarFieldEnum = (typeof EmailBatchScalarFieldEnum)[keyof typeof EmailBatchScalarFieldEnum]
+
+
+export const EmailSentScalarFieldEnum = {
+  id: 'id',
+  trackingId: 'trackingId',
+  recipient: 'recipient',
+  subject: 'subject',
+  createdAt: 'createdAt',
+  batchId: 'batchId'
+} as const
+
+export type EmailSentScalarFieldEnum = (typeof EmailSentScalarFieldEnum)[keyof typeof EmailSentScalarFieldEnum]
+
+
 export const EmailOpenScalarFieldEnum = {
   id: 'id',
+  emailSentId: 'emailSentId',
   ipAddress: 'ipAddress',
-  openedAt: 'openedAt',
-  createdAt: 'createdAt'
+  country: 'country',
+  city: 'city',
+  browser: 'browser',
+  browserVersion: 'browserVersion',
+  os: 'os',
+  osVersion: 'osVersion',
+  device: 'device',
+  userAgent: 'userAgent',
+  openedAt: 'openedAt'
 } as const
 
 export type EmailOpenScalarFieldEnum = (typeof EmailOpenScalarFieldEnum)[keyof typeof EmailOpenScalarFieldEnum]

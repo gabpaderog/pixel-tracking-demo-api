@@ -384,6 +384,8 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 
 export const ModelName = {
+  EmailBatch: 'EmailBatch',
+  EmailSent: 'EmailSent',
   EmailOpen: 'EmailOpen'
 } as const
 
@@ -400,10 +402,158 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "emailOpen"
+    modelProps: "emailBatch" | "emailSent" | "emailOpen"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
+    EmailBatch: {
+      payload: Prisma.$EmailBatchPayload<ExtArgs>
+      fields: Prisma.EmailBatchFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.EmailBatchFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmailBatchPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.EmailBatchFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmailBatchPayload>
+        }
+        findFirst: {
+          args: Prisma.EmailBatchFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmailBatchPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.EmailBatchFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmailBatchPayload>
+        }
+        findMany: {
+          args: Prisma.EmailBatchFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmailBatchPayload>[]
+        }
+        create: {
+          args: Prisma.EmailBatchCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmailBatchPayload>
+        }
+        createMany: {
+          args: Prisma.EmailBatchCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.EmailBatchCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmailBatchPayload>[]
+        }
+        delete: {
+          args: Prisma.EmailBatchDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmailBatchPayload>
+        }
+        update: {
+          args: Prisma.EmailBatchUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmailBatchPayload>
+        }
+        deleteMany: {
+          args: Prisma.EmailBatchDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.EmailBatchUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.EmailBatchUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmailBatchPayload>[]
+        }
+        upsert: {
+          args: Prisma.EmailBatchUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmailBatchPayload>
+        }
+        aggregate: {
+          args: Prisma.EmailBatchAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateEmailBatch>
+        }
+        groupBy: {
+          args: Prisma.EmailBatchGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.EmailBatchGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.EmailBatchCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.EmailBatchCountAggregateOutputType> | number
+        }
+      }
+    }
+    EmailSent: {
+      payload: Prisma.$EmailSentPayload<ExtArgs>
+      fields: Prisma.EmailSentFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.EmailSentFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmailSentPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.EmailSentFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmailSentPayload>
+        }
+        findFirst: {
+          args: Prisma.EmailSentFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmailSentPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.EmailSentFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmailSentPayload>
+        }
+        findMany: {
+          args: Prisma.EmailSentFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmailSentPayload>[]
+        }
+        create: {
+          args: Prisma.EmailSentCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmailSentPayload>
+        }
+        createMany: {
+          args: Prisma.EmailSentCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.EmailSentCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmailSentPayload>[]
+        }
+        delete: {
+          args: Prisma.EmailSentDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmailSentPayload>
+        }
+        update: {
+          args: Prisma.EmailSentUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmailSentPayload>
+        }
+        deleteMany: {
+          args: Prisma.EmailSentDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.EmailSentUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.EmailSentUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmailSentPayload>[]
+        }
+        upsert: {
+          args: Prisma.EmailSentUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmailSentPayload>
+        }
+        aggregate: {
+          args: Prisma.EmailSentAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateEmailSent>
+        }
+        groupBy: {
+          args: Prisma.EmailSentGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.EmailSentGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.EmailSentCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.EmailSentCountAggregateOutputType> | number
+        }
+      }
+    }
     EmailOpen: {
       payload: Prisma.$EmailOpenPayload<ExtArgs>
       fields: Prisma.EmailOpenFieldRefs
@@ -517,11 +667,40 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
+export const EmailBatchScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  createdAt: 'createdAt'
+} as const
+
+export type EmailBatchScalarFieldEnum = (typeof EmailBatchScalarFieldEnum)[keyof typeof EmailBatchScalarFieldEnum]
+
+
+export const EmailSentScalarFieldEnum = {
+  id: 'id',
+  trackingId: 'trackingId',
+  recipient: 'recipient',
+  subject: 'subject',
+  createdAt: 'createdAt',
+  batchId: 'batchId'
+} as const
+
+export type EmailSentScalarFieldEnum = (typeof EmailSentScalarFieldEnum)[keyof typeof EmailSentScalarFieldEnum]
+
+
 export const EmailOpenScalarFieldEnum = {
   id: 'id',
+  emailSentId: 'emailSentId',
   ipAddress: 'ipAddress',
-  openedAt: 'openedAt',
-  createdAt: 'createdAt'
+  country: 'country',
+  city: 'city',
+  browser: 'browser',
+  browserVersion: 'browserVersion',
+  os: 'os',
+  osVersion: 'osVersion',
+  device: 'device',
+  userAgent: 'userAgent',
+  openedAt: 'openedAt'
 } as const
 
 export type EmailOpenScalarFieldEnum = (typeof EmailOpenScalarFieldEnum)[keyof typeof EmailOpenScalarFieldEnum]
@@ -708,6 +887,8 @@ export type PrismaClientOptions = ({
   queryPlanCacheMaxSize?: number
 }
 export type GlobalOmitConfig = {
+  emailBatch?: Prisma.EmailBatchOmit
+  emailSent?: Prisma.EmailSentOmit
   emailOpen?: Prisma.EmailOpenOmit
 }
 

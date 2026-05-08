@@ -8,5 +8,7 @@
  *
  * 🟢 You can import this file directly.
  */
+export type * from './models/EmailBatch.js'
+export type * from './models/EmailSent.js'
 export type * from './models/EmailOpen.js'
 export type * from './commonInputTypes.js'

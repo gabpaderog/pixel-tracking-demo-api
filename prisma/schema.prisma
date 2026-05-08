@@ -12,11 +12,39 @@ datasource db {
   provider = "postgresql"
 }
 
-model EmailOpen{
-  id String @id @default(cuid())
-  ipAddress String?
-  openedAt DateTime @default(now())
+model EmailBatch {
+  id          String      @id @default(cuid())
+  name        String?    
+  createdAt   DateTime    @default(now())
 
-  createdAt DateTime @default(now())
+  emails      EmailSent[]
+}
 
+model EmailSent {
+  id          String      @id @default(cuid())
+  trackingId  String      @unique @default(cuid())
+  recipient   String
+  subject     String?
+  createdAt   DateTime    @default(now())
+
+  batchId     String?
+  batch       EmailBatch? @relation(fields: [batchId], references: [id])
+
+  opens       EmailOpen[]
+}
+
+model EmailOpen {
+  id             String     @id @default(cuid())
+  emailSentId    String
+  emailSent      EmailSent  @relation(fields: [emailSentId], references: [id])
+  ipAddress      String?
+  country        String?
+  city           String?
+  browser        String?
+  browserVersion String?
+  os             String?
+  osVersion      String?
+  device         String?
+  userAgent      String?
+  openedAt       DateTime   @default(now())
 }
