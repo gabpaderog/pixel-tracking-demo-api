@@ -99,6 +99,7 @@ export const EmailOpenScalarFieldEnum = {
   clientIp: 'clientIp',
   country: 'country',
   city: 'city',
+  org: 'org',
   browser: 'browser',
   browserVersion: 'browserVersion',
   os: 'os',
